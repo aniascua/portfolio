@@ -39,13 +39,13 @@ body {
 img {
     width: 100%;
     height: 100%;
-    object-fit: cover; 
+    object-fit: cover;
 }
 
 a {
     color: var(--secondary-black);
     text-decoration: none;
-    transition: color 0.3s ease; 
+    transition: color 0.3s ease;
 }
 
 a:hover {
@@ -53,7 +53,7 @@ a:hover {
 }
 
 section {
-    padding-top: 6rem; 
+    padding-top: 6rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -62,13 +62,13 @@ section {
 .container {
     width: 90%;
     margin: 0 auto;
-    max-width: 1200px; 
+    max-width: 1200px;
 }
 
 p {
     font-size: 1.6rem;
     color: var(--secondary-black);
-    line-height: 1.6; 
+    line-height: 1.6;
 }
 
 .section-heading {
@@ -78,14 +78,14 @@ p {
     letter-spacing: 0.2rem;
     text-align: center;
     position: relative;
-    margin-bottom: 6rem; 
+    margin-bottom: 6rem;
 }
 
 .section-heading::before {
     content: attr(data-outline);
     position: absolute;
     left: 50%;
-    top: -15%; 
+    top: -15%;
     transform: translateX(-50%);
     width: 100%;
     text-align: center;
@@ -110,13 +110,13 @@ p {
     background-color: var(--primary-color);
     color: white;
     font-size: 1.8rem;
-    padding: 0.8em 1.8em; 
+    padding: 0.8em 1.8em;
     border-radius: 50px;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .primary-btn:hover {
-    background-color: #4070f4; 
+    background-color: #4070f4;
     color: white;
 }
 
@@ -132,7 +132,8 @@ p {
 }
 
 .buttons svg {
-    width: 2.5rem; /* Ajusté el tamaño del SVG */
+    width: 2.5rem;
+    /* Ajusté el tamaño del SVG */
     color: var(--primary-color);
 }
 
@@ -154,11 +155,12 @@ p {
 ::-webkit-scrollbar-thumb:hover {
     background: var(--scroll-thumb-hover);
 }
+
 /* Navbar Styling */
 nav {
     background-color: white;
     width: 100%;
-   padding: 1rem 2rem; 
+    padding: 1rem 2rem;
     height: auto;
     min-height: 50px;
     display: flex;
@@ -167,15 +169,15 @@ nav {
     z-index: 99;
     transition: all 0.3s ease;
     font-family: "Poppins", sans-serif;
-    position: fixed; 
+    position: fixed;
     top: 0;
     left: 0;
 }
 
 nav.sticky {
-    padding: 0.8rem 2rem; 
-    min-height: 50px; 
-    box-shadow: 0 2px 5px rgba(255, 140, 0, 0.721); 
+    padding: 0.8rem 2rem;
+    min-height: 50px;
+    box-shadow: 0 2px 5px rgba(255, 140, 0, 0.721);
 }
 
 nav .navbar {
@@ -186,14 +188,14 @@ nav .navbar {
 }
 
 nav .navbar .logo a {
-  font-weight: 900;
-  font-size: 2.2rem;
-  color: var(--secondary-black);
-  transition: color 0.3s ease-in-out; 
+    font-weight: 900;
+    font-size: 2.2rem;
+    color: var(--secondary-black);
+    transition: color 0.3s ease-in-out;
 }
 
 nav .navbar .logo a:hover {
-  color: orange; 
+    color: orange;
 }
 
 nav .navbar .menu {
@@ -239,7 +241,7 @@ nav .menu-btn,
     font-size: 2rem;
     cursor: pointer;
     transition: color 0.3s ease;
-    display: none; 
+    display: none;
 }
 
 nav .menu-btn:hover,
@@ -251,7 +253,8 @@ nav .menu-btn:hover,
 .home {
     height: 100vh;
     width: 100%;
-    background: linear-gradient(135deg, #FF6B6B, #FFAA00, #ADD8E6); /* Inspirado en GTA VI */
+    background: linear-gradient(135deg, #FF6B6B, #FFAA00, #ADD8E6);
+    /* Inspirado en GTA VI */
     background-size: 200% 200%;
     /* animation: animate-gradient 10s linear infinite;  Puedes mantener o quitar la animación */
     font-family: "Poppins", sans-serif;
@@ -264,9 +267,11 @@ nav .menu-btn:hover,
     0% {
         background-position: 0% 50%;
     }
+
     50% {
         background-position: 100% 50%;
     }
+
     100% {
         background-position: 0% 50%;
     }
@@ -278,7 +283,7 @@ nav .menu-btn:hover,
 }
 
 .home .text-one {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     font-weight: 500;
     margin-bottom: 1rem;
 }
@@ -288,18 +293,19 @@ nav .menu-btn:hover,
     font-weight: 900;
     color: white;
     line-height: 1;
-    margin-bottom: 1rem; 
+    margin-bottom: 1rem;
 }
 
 .home .text-four {
     font-size: 2.3rem;
     font-weight: 500;
     color: rgb(0, 0, 0);
-    margin-top: 1.5rem; 
-    margin-bottom: 1rem; 
+
+    margin-bottom: 1rem;
 }
 
 @keyframes animate-text {
+
     0%,
     100% {
         background-position: 0% 50%;
@@ -313,16 +319,17 @@ nav .menu-btn:hover,
 .home .text-three {
     font-size: 2.2rem;
     margin-top: 1rem;
-    margin-bottom: 0.5rem; 
-    color: white; 
+    margin-bottom: 0.5rem;
+    color: white;
 }
 
 .home .button {
     margin-top: 2rem;
 }
+
 .home .button a.primary-btn.outline {
     background-color: transparent;
-    border: 2px solid white; 
+    border: 2px solid white;
     color: white;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -334,21 +341,23 @@ nav .menu-btn:hover,
 
 @media (max-width: 768px) {
     html {
-        font-size: 9px; 
+        font-size: 9px;
     }
 
     .home {
-        height: 100vh; 
+        height: 100vh;
         padding: 10rem 0;
     }
 
     .home .text-two {
-        font-size: clamp(4rem, 12vw, 6rem); 
+        font-size: clamp(4rem, 12vw, 6rem);
     }
 }
+
 /* About Section */
 #about {
-    padding: 8rem 0; /* Ajusté el padding */
+    padding: 8rem 0;
+    /* Ajusté el padding */
 }
 
 #about .wrapper {
@@ -361,14 +370,14 @@ nav .menu-btn:hover,
 #about .left {
     padding: 2rem;
     text-align: center;
-    flex: 1; 
+    flex: 1;
 }
 
 #about .left .card {
     box-shadow: 0px 0px 20px #4705fc33;
     padding: 3rem;
     border-radius: 1.2rem;
-    min-height: 40rem; 
+    min-height: 40rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -381,18 +390,18 @@ nav .menu-btn:hover,
     margin-bottom: 2rem;
     border-radius: 50%;
     overflow: hidden;
-  outline: 4px solid white; 
+    outline: 4px solid white;
 }
 
 #about .left .card .card-desc {
-  margin-bottom: 8px; 
+    margin-bottom: 8px;
 }
 
 #about .left .card .card-name {
-  font-weight: bold;
-  font-size: 2rem; 
-  text-align: center;
-  margin-top: 0; 
+    font-weight: bold;
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 0;
 }
 
 #about .left .card .card-sub-title {
@@ -459,13 +468,13 @@ nav .menu-btn:hover,
     position: relative;
     max-width: 100%;
     margin: 0 auto;
-    padding: 0 40px; 
+    padding: 0 40px;
 }
 
 #education .timeline {
     display: flex;
-    overflow-x: auto; 
-    scroll-behavior: smooth; 
+    overflow-x: auto;
+    scroll-behavior: smooth;
     padding: 2rem 0;
 }
 
@@ -553,16 +562,19 @@ nav .menu-btn:hover,
 /* Ocultar botones en móviles */
 @media (max-width: 768px) {
     .timeline-wrapper {
-        padding: 0; 
+        padding: 0;
     }
+
     .timeline-btn {
         display: none;
     }
+
     #education .timeline {
         display: block;
-        overflow-x: auto; 
+        overflow-x: auto;
         padding: 1rem 0;
     }
+
     #education .timeline::after {
         width: 2px;
         height: 100%;
@@ -570,6 +582,7 @@ nav .menu-btn:hover,
         left: 20px;
         right: auto;
     }
+
     #education .timeline-item {
         width: 100%;
         margin-right: 0;
@@ -578,10 +591,12 @@ nav .menu-btn:hover,
         text-align: left;
         padding-left: 40px;
     }
+
     #education .timeline-item::before {
         top: 10px;
         left: 14px;
     }
+
     #education .timeline-content {
         margin-top: 0;
         padding: 1rem;
@@ -589,15 +604,17 @@ nav .menu-btn:hover,
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
     }
+
     #education .timeline-content::after {
         display: none;
     }
 }
- #education .timeline-item::before {
-        display: none; 
-    }
 
-    .timeline-btn {
+#education .timeline-item::before {
+    display: none;
+}
+
+.timeline-btn {
     display: none;
 }
 
@@ -624,12 +641,13 @@ nav .menu-btn:hover,
     justify-content: center;
     max-width: 800px;
     margin: 0 auto;
-    margin-bottom: 10rem; 
+    margin-bottom: 10rem;
 }
 
 #projects .item:nth-of-type(even) {
     flex-direction: row-reverse;
 }
+
 #projects .item:nth-child(3) .left .img-container {
     margin-right: auto;
     max-width: 80%;
@@ -643,7 +661,7 @@ nav .menu-btn:hover,
     flex: 1;
     margin-left: -15rem;
     background-color: var(--body-bg);
-    padding: 4rem 3rem; 
+    padding: 4rem 3rem;
     border-radius: 1.2rem;
     box-shadow: 0px 0px 20px #00000028;
     z-index: 2;
@@ -654,11 +672,11 @@ nav .menu-btn:hover,
 }
 
 #projects .item:nth-of-type(even) .left {
-    margin-left: -15rem; 
+    margin-left: -15rem;
 }
 
 #projects .item .left .img-container {
-    height: 40rem; 
+    height: 40rem;
     overflow: hidden;
     border-radius: 1.2rem;
     box-shadow: 0px 0px 20px #4705fc33;
@@ -680,7 +698,7 @@ nav .menu-btn:hover,
 }
 
 #projects .item:hover .left .img-container img {
-    transform: scale(1.05); 
+    transform: scale(1.05);
 }
 
 #projects .item .right .project-title {
@@ -709,7 +727,7 @@ nav .menu-btn:hover,
 }
 
 #projects .item .right .buttons a {
-    padding: 0.8em 1.8em; 
+    padding: 0.8em 1.8em;
 }
 
 /* Footer Section */
@@ -718,25 +736,25 @@ nav .menu-btn:hover,
     background-color: var(--footer-bg);
     color: var(--footer-text);
     text-align: center;
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
 }
 
 .footer .social {
     padding-bottom: 1rem;
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .footer .social a {
-    font-size: 2rem; 
+    font-size: 2rem;
     color: inherit;
-    width: 3rem; 
-    height: 3rem; 
-    line-height: 3rem; 
+    width: 3rem;
+    height: 3rem;
+    line-height: 3rem;
     display: inline-block;
     text-align: center;
     border-radius: 50%;
@@ -751,20 +769,20 @@ nav .menu-btn:hover,
 }
 
 .footer ul {
-    margin-top: 0.5rem; 
+    margin-top: 0.5rem;
     padding: 0;
     list-style: none;
-    font-size: 1.4rem; 
-    line-height: 1.5; 
-    margin-bottom: 1rem; 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
+    font-size: 1.4rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .footer ul li {
     display: inline-block;
-    padding: 0 0.8rem; 
+    padding: 0 0.8rem;
 }
 
 .footer ul li a {
@@ -778,9 +796,9 @@ nav .menu-btn:hover,
 }
 
 .footer .copyright {
-    font-size: 1.2rem; 
+    font-size: 1.2rem;
     color: var(--copyright-text);
-    margin-top: 0.5rem; 
+    margin-top: 0.5rem;
 }
 
 /* Responsive Media Queries */
@@ -801,16 +819,16 @@ nav .menu-btn:hover,
 
 @media (max-width: 768px) {
     html {
-        font-size: 9px; 
+        font-size: 9px;
     }
 
     .home {
-        height: 100vh; 
+        height: 100vh;
         padding: 10rem 0;
     }
 
     .home .text-two {
-        font-size: clamp(4rem, 12vw, 6rem); 
+        font-size: clamp(4rem, 12vw, 6rem);
     }
 
     nav {
@@ -827,9 +845,9 @@ nav .menu-btn:hover,
         top: 0;
         background: white;
         height: 100vh;
-        max-width: 300px; 
+        max-width: 300px;
         width: 100%;
-        padding-top: 8rem; 
+        padding-top: 8rem;
         flex-direction: column;
         align-items: center;
         transition: left 0.5s ease;
@@ -849,7 +867,7 @@ nav .menu-btn:hover,
     }
 
     nav .navbar .media-icons {
-        display: none; 
+        display: none;
     }
 
     nav .menu-btn,
@@ -863,7 +881,7 @@ nav .menu-btn:hover,
     }
 
     #about .right {
-        text-align: left; 
+        text-align: left;
     }
 
     #about .left {
@@ -871,7 +889,7 @@ nav .menu-btn:hover,
     }
 
     #about .left .card {
-        min-height: auto; 
+        min-height: auto;
     }
 
     #about .icon-container {
@@ -879,7 +897,7 @@ nav .menu-btn:hover,
     }
 
     #education .timeline::after {
-        left: 2rem; 
+        left: 2rem;
     }
 
     #education .timeline-item {
@@ -887,7 +905,7 @@ nav .menu-btn:hover,
         padding-left: 5rem;
         padding-right: 0;
         text-align: left;
-        margin-bottom: 3rem; 
+        margin-bottom: 3rem;
     }
 
     #education .timeline-item:nth-child(odd),
@@ -898,7 +916,7 @@ nav .menu-btn:hover,
     #education .timeline-item:nth-child(odd)::before,
     #education .timeline-item:nth-child(even)::before {
         left: 1.4rem;
-        top: 20px; 
+        top: 20px;
     }
 
     #education .timeline-item:nth-child(odd) .timeline-content::after,
@@ -922,17 +940,17 @@ nav .menu-btn:hover,
     }
 
     #projects .item .right {
-        margin-top: -10rem; 
+        margin-top: -10rem;
         padding: 3rem;
     }
 
     #projects .item .left .img-container {
-        height: 30rem; 
+        height: 30rem;
     }
 
     .buttons {
         flex-direction: column;
-        align-items: stretch; 
+        align-items: stretch;
     }
 
     .buttons a {
