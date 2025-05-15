@@ -1,833 +1,421 @@
 <!DOCTYPE html>
-
 <html lang="en" dir="ltr">
 
-
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scaleable=no">
 
-    <meta charset="UTF-8">
+    <title>Ana Ascua Portfolio</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scaleable=no">
+    <link rel="stylesheet" href="style.css">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <style>
+        .icon {
+            transition: transform 0.3s ease-in-out;
 
+        }
 
-    <title>Ana Ascua Portfolio</title>
+        .icon:hover {
+            transform: scale(1.4);
 
+        }
 
+        .wrapper {
+            display: flex;
+            gap: 20px;
+            Espacio entre la card y el texto align-items: center;
+        }
 
-    <link rel="stylesheet" href="style.css">
+        .left {
+            flex: 0 0 auto;
+            width: auto;
+        }
 
+        .right {
+            flex: 1 1 auto;
+        }
 
+        /* Media query para pantallas más pequeñas (mobile) */
+        @media (max-width: 768px) {
+            .wrapper {
+                flex-direction: column;
+                align-items: flex-start;
+            }
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-
-    <style>
-
-        .icon {
-
-            transition: transform 0.3s ease-in-out;
-
-            /* Mantenemos la transición suave */
-
-        }
-
-
-
-        .icon:hover {
-
-            transform: scale(1.4);
-
-            /* Escalamos el icono un 40% más grande al hacer hover */
-
-        }
-
-        /* Estilos por defecto para desktop (la card a la izquierda) */
-
-.wrapper {
-
-    display: flex;
-
-    gap: 20px; Espacio entre la card y el texto
-
-    align-items: center; /* Alinea verticalmente la card y el texto */
-
-}
-
-
-
-.left {
-
-    flex: 0 0 auto; /* No crecerá ni se encogerá, tamaño automático */
-
-    width: auto; /* Ancho automático para ajustarse al contenido */
-
-}
-
-
-
-.right {
-
-    flex: 1 1 auto; /* Crecerá para ocupar el espacio restante */
-
-}
-
-
-
-/* Media query para pantallas más pequeñas (mobile) */
-
-@media (max-width: 768px) {
-
-    .wrapper {
-
-        flex-direction: column; /* Apila la card y el texto verticalmente */
-
-        align-items: flex-start; /* Alinea a la izquierda en mobile */
-
-    }
-
-
-
-    .left {
-
-        width: 100%; /* Ocupa todo el ancho en mobile */
-
-        margin-bottom: 20px; /* Espacio entre la card y el texto en mobile */
-
-    }
-
-}
-
-    </style>
-
+            .left {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
 </head>
 
-
-
 <body>
-
-    <div class="scroll-button">
-
-        <a href="#home" class="btn btn-primary btn-xs">
-
-            <i class="fas fa-arrow-up"></i>
-
-        </a>
-
-    </div>
-
-
-
-    <nav>
-
-        <div class="navbar">
-
-            <div class="logo"><a href="#">{ Any }</a></div>
-
-            <ul class="menu">
-
-                <li><a href="#home">Home</a></li>
-
-                <li><a href="#about">Sobre mí</a></li>
-
-                <!-- <li><a href="#education">Educación</a></li> -->
-
-                <li><a href="#projects">Proyectos</a></li>
-
-                <!-- <a href="#footer">Contacto</a></li> -->
-
-                <div class="cancel-btn">
-
-                    <i class="fas fa-times"></i>
-
-                </div>
-
-            </ul>
-
-            <div class="media-icons">
-
-                <a href="https://github.com/aniascua"><i class="fab fa-github"></i></a>
-
-                <a href="https://www.linkedin.com/in/anaascua/"><i class=" fab fa-linkedin"></i></a>
-
-            </div>
-
-        </div>
-
-        <div class="menu-btn">
-
-            <i class="fas fa-bars"></i>
-
-        </div>
-
-    </nav>
-
-
-
-    <section class="home" id="home">
-
-        <div class="home-content">
-
-            <div class="text">
-
-                <div class="text-one">👋 Hola! Soy</div>
-
-                <div class="text-two">ANA<br>ASCUA</div>
-
-
-
-                <div class="text-four">Técnica Universitaria en Programación UTN</div>
-
-                <div class="text-three">Buenos Aires, Argentina
-
-                </div>
-
-            </div>
-
-            <div class="button">
-
-                <a href="https://drive.google.com/file/d/1KOdkuw39ZobgudIq79fCHVlq5rQdm1wc/view?usp=sharing"
-
-                    class="primary-btn outline white-on-load">
-
-                    Descargar CV
-
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-  <section id="about">
-
-    <div class="container">
-
-        <h2 class="section-heading" data-outline="sobre mí"><b>Sobre mí</b></h2>
-
-        <div class="wrapper">
-
-            <div class="left">
-
-                <div class="card">
-
-                    <div class="img">
-
-                        <img src="./Images/z4AkDfF7.png" alt="Profile Picture">
-
-                    </div>
-
-                    <p class="card-desc">
-
-                        Me gusta colaborar, trabajar en equipo y el aprendizaje constante
-
-                    </p>
-
-                    <h3 class="card-name">ANA ASCUA</h3>
-
-                </div>
-
-            </div>
-
-            <div class="right">
-
-                <p class="subheading">Hola! 👋 Soy ANA</p>
-
-                <h2 class="slogan">Web Developer 💻</h2>
-
-                <p class="right-text">
-
-                    <b style="font-size: 1em;">Técnica Universitaria en Programación UTN</b><br>
-
-                    <span style="font-size: 1em;">Estudiante de Tecnicatura Universitaria en Desarrollo Web
-
-                        UNER</span>
-
-                </p>
-
-                <div class="icon-container">
-
-                    <a href="https://www.python.org" target="_blank" rel="noreferrer">
-
-                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg"
-
-                            alt="python" class="icon python-text-icon" />
-
-                    </a>
-
-                    <a href="https://openai.com/blog/chatgpt" target="_blank" rel="noreferrer">
-
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/480px-ChatGPT_logo.svg.png"
-
-                            alt="ChatGPT" class="icon" style="width: 32px; height: 32px;" />
-
-                    </a>
-
-                    <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer">
-
-                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg"
-
-                            alt="html5" class="icon" />
-
-                    </a>
-
-                    <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer">
-
-                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg"
-
-                            alt="css3" class="icon" />
-
-                    </a>
-
-                    <a href="https://www.javascript.com" target="_blank" rel="noreferrer">
-
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/480px-Unofficial_JavaScript_logo_2.svg.png"
-
-                            alt="javascript" class="icon" />
-
-                    </a>
-
-                    <a href="https://git-scm.com" target="_blank" rel="noreferrer">
-
-                        <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="Git"
-
-                            class="icon" />
-
-                    </a>
-
-                    <a href="https://desktop.github.com" target="_blank" rel="noreferrer">
-
-                        <img src="https://static-00.iconduck.com/assets.00/github-desktop-icon-2046x2048-r5plljad.png"
-
-                            alt="GitHub Desktop" class="icon" />
-
-                    </a>
-
-                </div>
-
-                <div class="buttons">
-
-                    <a href="mailto:anaascua5@yahoo.com.ar" class="primary-btn">Contacto</a>
-
-                    <a href="https://www.linkedin.com/in/anaascua/" class="primary-btn outline">LinkedIn</a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
- <section id="education">
-
-    <div class="container">
-
-        <h2 class="section-heading" data-outline="Educación"><b>Educación</b></h2>
-
-        <div class="timeline-wrapper">
-
-            <div class="timeline">
-
-                <div class="timeline-item">
-
-                    <div class="timeline-content">
-
-                        <h3><strong>Curso Testing QA</strong></h3>
-
-                        <p>(Talento Tech, Buenos Aires Aprende)</p>
-
-                        <p class="small-text">2025 - EN CURSO</p>
-
-                    </div>
-
-                </div>
-
-                <div class="timeline-item">
-
-                    <div class="timeline-content">
-
-                        <h3><strong>Tecnicatura Universitaria en Desarrollo Web</strong></h3>
-
-                        <p>UNER (Universidad Nacional de Entre Ríos, Argentina)</p>
-
-                        <p class="small-text">2024 - EN CURSO (2do año)</p>
-
-                    </div>
-
-                </div>
-
-                <div class="timeline-item">
-
-                    <div class="timeline-content">
-
-                        <h3><strong>Programación Web con PHP y MySQL</strong></h3>
-
-                        <p>Tecno 3F - Municipio 3 de Febrero</p>
-
-                        <p class="small-text">Sept 2023 - Dic 2023</p>
-
-                    </div>
-
-                </div>
-
-                <div class="timeline-item">
-
-                    <div class="timeline-content">
-
-                        <h3><a href="https://media.licdn.com/dms/image/v2/D4D2DAQEEQj7y0CoSgg/profile-treasury-image-shrink_800_800/profile-treasury-image-shrink_800_800/0/1709329095178?e=1747695600&v=beta&t=iFwvnRY48w8f2byslBJ49u8ajRooPzf-vmbOvvODnao" target="_blank" rel="noopener noreferrer"><strong>Introducción a DevOps - CITIA</strong> Certificado<span style="font-size: 0.8em; margin-left: 0.3em;">🔗</span></a></h3>
-
-                        <p>Curso de capacitación tecnológica UNLPam</p>
-
-                        <p class="small-text">Inicio: Sept 2023</p>
-
-                    </div>
-
-                </div>
-
-                <div class="timeline-item">
-
-                    <div class="timeline-content">
-
-                        <h3><strong>Curso de Big Data</strong></h3>
-
-                        <p>Codo a Codo 4.0</p>
-
-                        <p class="small-text">Mar 2023 - Jul 2023</p>
-
-                    </div>
-
-                </div>
-
-                <div class="timeline-item">
-
-                    <div class="timeline-content">
-
-                        <h3><a href="https://media.licdn.com/dms/image/v2/D4D2DAQH-WwyuNbAunA/profile-treasury-image-shrink_800_800/profile-treasury-image-shrink_800_800/0/1709329374629?e=1747699200&v=beta&t=exU4PUNYnRJcsBjeus_gLFXdon1AD5svhGZWnpDOTXU" target="_blank" rel="noopener noreferrer"><strong>UTN.BA + NEORIS</strong> Certificado<span style="font-size: 0.8em; margin-left: 0.3em;">🔗</span></a></h3>
-
-                        <p>Beca NEORIS, Curso Desarrollador Java</p>
-
-                        <p class="small-text">Oct 2022 - Dic 2022</p>
-
-                    </div>
-
-                </div>
-
-                <div class="timeline-item">
-
-                    <div class="timeline-content">
-
-                        <h3><strong>Tecnicatura Universitaria en Programación</strong></h3>
-
-                        <p>UTN Haedo - UTN San Rafael</p>
-
-                        <p class="small-text">Mar 2021 - Nov 2023</p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
- <section id="projects">
-
-    <div class="container">
-
-        <h2 class="section-heading" data-outline="Proyectos"><b>Proyectos</b></h2>
-
-        <div class="all-items">
-
-            <div class="item">
-
-                <div class="left">
-
-                    <div class="img-container">
-
-                        <img src="Images/github2.PNG" alt="GitHub Profile">
-
-                    </div>
-
-                </div>
-
-                <div class="right">
-
-                    <h2 class="project-title">Mi GitHub 💻</h2>
-
-                    <h3 class="project-sub-title">El lugar donde alojo todos mis proyectos</h3>
-
-                    <p class="project-desc">Te invito a visitar mi GitHub para ver los proyectos en los que
-
-                        estoy trabajando</p>
-
-                    <div class="buttons">
-
-                        <a href="https://github.com/aniascua" class="primary-btn outline external-link">
-
-                            <span>Ver</span>
-
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-
-                                stroke="currentColor">
-
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-
-                                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-
-                            </svg>
-
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="item">
-
-                <div class="left">
-
-                    <div class="img-container">
-
-                        <img src="Images/moe.png" alt="Proyecto Integrador E-Commerce">
-
-                    </div>
-
-                </div>
-
-                <div class="right">
-
-                    <h2 class="project-title">Proyecto Integrador E-Commerce</h2>
-
-                    <h3 class="project-sub-title">E-Commerce desarrollado con HTML, CSS, JavaScript y Bootstrap</h3>
-
-                    <p class="project-desc">Proyecto final de la Tecnicatura en Programación UTN. Implementación de un E-Commerce utilizando **HTML**, **CSS**, **JavaScript** para la funcionalidad y **Bootstrap 5** para el diseño responsive. El backend incluye integración con **MercadoPago** (credenciales no incluidas por seguridad).</p>
-
-                    <div class="buttons">
-
-                        <a href="https://github.com/aniascua/Proyecto-Final-Llamarada-Moe" class="primary-btn outline external-link" class="primary-btn external-link">
-
-                            <span>Ver Código</span>
-
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-
-                                stroke="currentColor">
-
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-
-                                    d="M13.828 10.172a4 4 0 00-5.656 5.656m5.656-5.656l-2.828 2.828m-2.828-2.828l2.828 2.828m-2 2.121a4 4 0 00-5.657 5.657m5.657-5.657l-2.829 2.829m-4.9-4.9l3.535 3.535m-0-6.364l3.535-3.535m-3.535 3.535l-3.535-3.535" />
-
-                            </svg>
-
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="item">
-
-                <div class="left">
-
-                    <div class="img-container">
-
-                        <img src="Images/simpsons1.jpg" alt="Próximamente">
-
-                    </div>
-
-                </div>
-
-                <div class="right">
-
-        <h2 class="project-title">🚧 Próximamente 🚧</h2>
-
-        <h3 class="project-sub-title">🚀 Nuevo proyecto en desarrollo 🚀</h3>
-
-        <p class="project-desc">¡Estoy trabajando en un nuevo proyecto emocionante que estará disponible pronto! ⏳ Mantente atento para más detalles. 👀</p>
-
-        <div class="buttons">
-
-                        <!-- {/* Puedes dejar los botones vacíos o agregar un enlace a tus redes sociales */} -->
-
-                        </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-    <footer id="footer">
-
-        <div class="footer">
-
-            <div class="social">
-
-                <a href="https://github.com/aniascua"><i class="fab fa-github"></i></a>
-
-                <a href="https://www.linkedin.com/in/anaascua/"><i class="fab fa-linkedin"></i></a>
-
-                <a href="mailto:anaascua5@yahoo.com.ar"><i class="fa fa-envelope"></i></a>
-
-            </div>
-
-            <ul>
-
-                <!-- <li><a href="#home">Home</a></li> -->
-
-                <!-- <li><a href="#about">Sobre Mí</a></li>
-
-                <li><a href="#projects">Proyectos</a></li> -->
-
-                <!-- <li><a href="#footer">Contacto</a></li> -->
-
-            </ul>
-
-            <p class="copyright">Ana Ascua © 2025</p>
-
-        </div>
-
-    </footer>
-
-
-
-  <script>
-
-        const menuBtn = document.querySelector(".menu-btn");
-
-        const menu = document.querySelector(".menu");
-
-        const cancelBtn = document.querySelector(".cancel-btn");
-
-        const navbar = document.querySelector("nav");
-
-        const timelineWrapper = document.querySelector('.timeline-wrapper');
-
-        const timeline = document.querySelector('.timeline');
-
-        const prevBtn = document.querySelector('.prev-btn');
-
-        const nextBtn = document.querySelector('.next-btn');
-
-
-
-        menuBtn.onclick = () => {
-
-            menu.classList.add("active");
-
-            menuBtn.classList.add("hide");
-
-            cancelBtn.classList.add("show");
-
-            document.body.classList.add("no-scroll"); // Prevent scrolling when menu is open
-
-        }
-
-
-
-        cancelBtn.onclick = () => {
-
-            menu.classList.remove("active");
-
-            menuBtn.classList.remove("hide");
-
-            cancelBtn.classList.remove("show");
-
-            document.body.classList.remove("no-scroll"); // Enable scrolling when menu is closed
-
-        }
-
-
-
-        window.onscroll = () => {
-
-            if (this.scrollY > 20) {
-
-                navbar.classList.add("sticky");
-
-            } else {
-
-                navbar.classList.remove("sticky");
-
-            }
-
-        }
-
-
-
-        // Smooth scrolling for anchor links
-
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-
-            anchor.addEventListener('click', function (e) {
-
-                e.preventDefault();
-
-
-
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-
-                    behavior: 'smooth'
-
-                });
-
-
-
-                // Close the menu if it's open after clicking a link
-
-                if (menu.classList.contains('active')) {
-
-                    menu.classList.remove('active');
-
-                    menuBtn.classList.remove('hide');
-
-                    cancelBtn.classList.remove('show');
-
-                    document.body.classList.remove("no-scroll");
-
-                }
-
-            });
-
-        });
-
-
-
-        if (prevBtn && nextBtn && timeline) {
-
-            // Estilos para las flechas grandes y circulares
-
-            const buttonStyle = `
-
-                display: flex;
-
-                justify-content: center;
-
-                align-items: center;
-
-                width: 50px; /* Aumenta el tamaño del círculo */
-
-                height: 50px; /* Aumenta el tamaño del círculo */
-
-                border-radius: 50%;
-
-                background-color: rgba(255, 140, 0, 0.7); /* Naranja con transparencia */
-
-                color: white;
-
-                font-size: 2.2rem; /* Aumenta el tamaño de la flecha */
-
-                font-weight: bold;
-
-                cursor: pointer;
-
-                border: none;
-
-                outline: none;
-
-                z-index: 10;
-
-                position: absolute;
-
-                top: 50%;
-
-                transform: translateY(-50%);
-
-            `;
-
-
-
-            // Aplica los estilos a los botones
-
-            prevBtn.style.cssText = buttonStyle + 'left: 10px;';
-
-            nextBtn.style.cssText = buttonStyle + 'right: 10px;';
-
-
-
-            prevBtn.addEventListener('click', function() {
-
-                timeline.scrollLeft -= 300; // Ajusta la cantidad de desplazamiento
-
-            });
-
-
-
-            nextBtn.addEventListener('click', function() {
-
-                timeline.scrollLeft += 300; // Ajusta la cantidad de desplazamiento
-
-            });
-
-
-
-            // Opcional: Ocultar/mostrar botones si se llega al inicio/final
-
-            timeline.addEventListener('scroll', function() {
-
-                if (timeline.scrollLeft === 0) {
-
-                    prevBtn.style.visibility = 'hidden';
-
-                } else {
-
-                    prevBtn.style.visibility = 'visible';
-
-                }
-
-
-
-                if (timeline.scrollLeft + timeline.offsetWidth >= timeline.scrollWidth - 5) { // Pequeño ajuste para el final
-
-                    nextBtn.style.visibility = 'hidden';
-
-                } else {
-
-                    nextBtn.style.visibility = 'visible';
-
-                }
-
-            });
-
-
-
-            // Ocultar el botón de "prev" al inicio
-
-            if (timeline.scrollLeft === 0) {
-
-                prevBtn.style.visibility = 'hidden';
-
-            }
-
-        }
-
-    </script>
-
+    <div class="scroll-button">
+        <a href="#home" class="btn btn-primary btn-xs">
+            <i class="fas fa-arrow-up"></i>
+        </a>
+    </div>
+
+    <nav>
+        <div class="navbar">
+            <div class="logo"><a href="#home">{ Any }</a></div>
+            <ul class="menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">Sobre mí</a></li>
+                <!-- <li><a href="#education">Educación</a></li> -->
+                <li><a href="#projects">Proyectos</a></li>
+                <!-- <a href="#footer">Contacto</a></li> -->
+                <div class="cancel-btn">
+                    <i class="fas fa-times"></i>
+                </div>
+            </ul>
+            <div class="media-icons">
+                <a href="https://github.com/aniascua"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/anaascua/"><i class=" fab fa-linkedin"></i></a>
+            </div>
+        </div>
+        <div class="menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <section class="home" id="home">
+        <div class="home-content">
+            <div class="text">
+                <div class="text-one">👋 Hola! Soy</div>
+                <div class="text-two">ANA<br>ASCUA</div>
+
+                <div class="text-four">Técnica Universitaria en Programación UTN</div>
+                <div class="text-three">Buenos Aires, Argentina
+                </div>
+            </div>
+            <div class="button">
+                <a href="https://drive.google.com/file/d/1KOdkuw39ZobgudIq79fCHVlq5rQdm1wc/view?usp=sharing"
+                    class="primary-btn outline white-on-load">
+                    Descargar CV
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2 class="section-heading" data-outline="sobre mí"><b>Sobre mí</b></h2>
+            <div class="wrapper">
+                <div class="left">
+                    <div class="card">
+                        <div class="img">
+                            <img src="./Images/z4AkDfF7.png" alt="Profile Picture">
+                        </div>
+                        <p class="card-desc">
+                            Me gusta colaborar, trabajar en equipo y el aprendizaje constante
+                        </p>
+                        <h3 class="card-name">ANA ASCUA</h3>
+                    </div>
+                </div>
+                <div class="right">
+                    <p class="subheading">Hola! 👋 Soy ANA</p>
+                    <h2 class="slogan">Web Developer 💻</h2>
+                    <p class="right-text">
+                        <b style="font-size: 1em;">Técnica Universitaria en Programación UTN</b><br>
+                        <span style="font-size: 1em;">Estudiante de Tecnicatura Universitaria en Desarrollo Web
+                            UNER</span>
+                    </p>
+                    <div class="icon-container">
+                        <a href="https://www.python.org" target="_blank" rel="noreferrer">
+                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg"
+                                alt="python" class="icon python-text-icon" />
+                        </a>
+                        <a href="https://openai.com/blog/chatgpt" target="_blank" rel="noreferrer">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/480px-ChatGPT_logo.svg.png"
+                                alt="ChatGPT" class="icon" style="width: 32px; height: 32px;" />
+                        </a>
+                        <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer">
+                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg"
+                                alt="html5" class="icon" />
+                        </a>
+                        <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer">
+                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg"
+                                alt="css3" class="icon" />
+                        </a>
+                        <a href="https://www.javascript.com" target="_blank" rel="noreferrer">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/480px-Unofficial_JavaScript_logo_2.svg.png"
+                                alt="javascript" class="icon" />
+                        </a>
+                        <a href="https://git-scm.com" target="_blank" rel="noreferrer">
+                            <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="Git"
+                                class="icon" />
+                        </a>
+                        <a href="https://desktop.github.com" target="_blank" rel="noreferrer">
+                            <img src="https://static-00.iconduck.com/assets.00/github-desktop-icon-2046x2048-r5plljad.png"
+                                alt="GitHub Desktop" class="icon" />
+                        </a>
+                    </div>
+                    <div class="buttons">
+                        <a href="mailto:anaascua5@yahoo.com.ar" class="primary-btn">Contacto</a>
+                        <a href="https://www.linkedin.com/in/anaascua/" class="primary-btn outline">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="container">
+            <h2 class="section-heading" data-outline="Educación"><b>Educación</b></h2>
+            <div class="timeline-wrapper">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3><strong>Curso Testing QA</strong></h3>
+                            <p>(Talento Tech, Buenos Aires Aprende)</p>
+                            <p class="small-text">2025 - EN CURSO</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3><strong>Tecnicatura Universitaria en Desarrollo Web</strong></h3>
+                            <p>UNER (Universidad Nacional de Entre Ríos, Argentina)</p>
+                            <p class="small-text">2024 - EN CURSO (2do año)</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3><a href="https://media.licdn.com/dms/image/v2/D4D2DAQEEQj7y0CoSgg/profile-treasury-image-shrink_800_800/profile-treasury-image-shrink_800_800/0/1709329095178?e=1747695600&v=beta&t=iFwvnRY48w8f2byslBJ49u8ajRooPzf-vmbOvvODnao"
+                                    target="_blank" rel="noopener noreferrer"><strong>Introducción a DevOps -
+                                        CITIA</strong> Certificado<span
+                                        style="font-size: 0.8em; margin-left: 0.3em;">🔗</span></a></h3>
+                            <p>Curso de capacitación tecnológica UNLPam</p>
+                            <p class="small-text">Inicio: Sept 2023</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3><strong>Curso de Big Data</strong></h3>
+                            <p>Codo a Codo 4.0</p>
+                            <p class="small-text">Mar 2023 - Jul 2023</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3><a href="https://media.licdn.com/dms/image/v2/D4D2DAQH-WwyuNbAunA/profile-treasury-image-shrink_800_800/profile-treasury-image-shrink_800_800/0/1709329374629?e=1747699200&v=beta&t=exU4PUNYnRJcsBjeus_gLFXdon1AD5svhGZWnpDOTXU"
+                                    target="_blank" rel="noopener noreferrer"><strong>UTN.BA + NEORIS</strong>
+                                    Certificado<span style="font-size: 0.8em; margin-left: 0.3em;">🔗</span></a></h3>
+                            <p>Beca NEORIS, Curso Desarrollador Java</p>
+                            <p class="small-text">Oct 2022 - Dic 2022</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3><strong>Tecnicatura Universitaria en Programación</strong></h3>
+                            <p>UTN Haedo - UTN San Rafael</p>
+                            <p class="small-text">Mar 2021 - Nov 2023</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-heading" data-outline="Proyectos"><b>Proyectos</b></h2>
+            <div class="all-items">
+                <div class="item">
+                    <div class="left">
+                        <div class="img-container">
+                            <img src="Images/github2.PNG" alt="GitHub Profile">
+                        </div>
+                    </div>
+                    <div class="right">
+                        <h2 class="project-title">Mi GitHub 💻</h2>
+                        <h3 class="project-sub-title">El lugar donde alojo todos mis proyectos</h3>
+                        <p class="project-desc">Te invito a visitar mi GitHub para ver los proyectos en los que
+                            estoy trabajando</p>
+                        <div class="buttons">
+                            <a href="https://github.com/aniascua" class="primary-btn outline external-link">
+                                <span>Ver</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="left">
+                        <div class="img-container">
+                            <img src="Images/moe.png" alt="Proyecto Integrador E-Commerce">
+                        </div>
+                    </div>
+                    <div class="right">
+                        <h2 class="project-title">Proyecto Integrador E-Commerce (UTN)</h2>
+                        <h3 class="project-sub-title">E-Commerce desarrollado con HTML, CSS, JavaScript y Bootstrap</h3>
+                        <p class="project-desc">Proyecto final de la Tecnicatura Universitaria en Programación UTN.<br>
+                            Implementación de un E-Commerce utilizando **HTML**, **CSS**, **JavaScript** para la
+                            funcionalidad y **Bootstrap 5** para el diseño responsive.<br>El backend incluye integración
+                            con **MercadoPago** (credenciales no incluidas por seguridad).</p>
+                        <div class="buttons">
+                            <a href="https://github.com/aniascua/Proyecto-Final-Llamarada-Moe"
+                                class="primary-btn outline external-link" class="primary-btn external-link">
+                                <span>Ver Código</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13.828 10.172a4 4 0 00-5.656 5.656m5.656-5.656l-2.828 2.828m-2.828-2.828l2.828 2.828m-2 2.121a4 4 0 00-5.657 5.657m5.657-5.657l-2.829 2.829m-4.9-4.9l3.535 3.535m-0-6.364l3.535-3.535m-3.535 3.535l-3.535-3.535" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="left">
+                        <div class="img-container">
+                            <img src="Images/simpsons1.jpg" alt="Próximamente">
+                        </div>
+                    </div>
+                    <div class="right">
+                        <h2 class="project-title">🚧 Próximamente 🚧</h2>
+                        <h3 class="project-sub-title">🚀 Nuevo proyecto en desarrollo 🚀</h3>
+                        <p class="project-desc">¡Estoy trabajando en un nuevo proyecto emocionante que estará disponible
+                            pronto! ⏳ Mantente atento para más detalles. 👀</p>
+                        <div class="buttons">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <div class="footer">
+            <div class="social">
+                <a href="https://github.com/aniascua"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/anaascua/"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:anaascua5@yahoo.com.ar"><i class="fa fa-envelope"></i></a>
+            </div>
+            <ul>
+                <!-- <li><a href="#home">Home</a></li> -->
+                <!-- <li><a href="#about">Sobre Mí</a></li>
+                <li><a href="#projects">Proyectos</a></li> -->
+                <!-- <li><a href="#footer">Contacto</a></li> -->
+            </ul>
+            <p class="copyright">Ana Ascua © 2025</p>
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.querySelector(".menu-btn");
+        const menu = document.querySelector(".menu");
+        const cancelBtn = document.querySelector(".cancel-btn");
+        const navbar = document.querySelector("nav");
+        const timelineWrapper = document.querySelector('.timeline-wrapper');
+        const timeline = document.querySelector('.timeline');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+
+        menuBtn.onclick = () => {
+            menu.classList.add("active");
+            menuBtn.classList.add("hide");
+            cancelBtn.classList.add("show");
+            document.body.classList.add("no-scroll");
+        }
+
+        cancelBtn.onclick = () => {
+            menu.classList.remove("active");
+            menuBtn.classList.remove("hide");
+            cancelBtn.classList.remove("show");
+            document.body.classList.remove("no-scroll");
+        }
+
+        window.onscroll = () => {
+            if (this.scrollY > 20) {
+                navbar.classList.add("sticky");
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+
+                // Close the menu if it's open after clicking a link
+                if (menu.classList.contains('active')) {
+                    menu.classList.remove('active');
+                    menuBtn.classList.remove('hide');
+                    cancelBtn.classList.remove('show');
+                    document.body.classList.remove("no-scroll");
+                }
+            });
+        });
+
+        if (prevBtn && nextBtn && timeline) {
+
+            const buttonStyle = `
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 50px; /* Aumenta el tamaño del círculo */
+                height: 50px; /* Aumenta el tamaño del círculo */
+                border-radius: 50%;
+                background-color: rgba(255, 140, 0, 0.7); /* Naranja con transparencia */
+                color: white;
+                font-size: 2.2rem; /* Aumenta el tamaño de la flecha */
+                font-weight: bold;
+                cursor: pointer;
+                border: none;
+                outline: none;
+                z-index: 10;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+            `;
+
+
+            prevBtn.style.cssText = buttonStyle + 'left: 10px;';
+            nextBtn.style.cssText = buttonStyle + 'right: 10px;';
+
+            prevBtn.addEventListener('click', function () {
+                timeline.scrollLeft -= 300;
+            });
+
+            nextBtn.addEventListener('click', function () {
+                timeline.scrollLeft += 300;
+            });
+
+
+            timeline.addEventListener('scroll', function () {
+                if (timeline.scrollLeft === 0) {
+                    prevBtn.style.visibility = 'hidden';
+                } else {
+                    prevBtn.style.visibility = 'visible';
+                }
+
+                if (timeline.scrollLeft + timeline.offsetWidth >= timeline.scrollWidth - 5) {
+                    nextBtn.style.visibility = 'hidden';
+                } else {
+                    nextBtn.style.visibility = 'visible';
+                }
+            });
+
+
+            if (timeline.scrollLeft === 0) {
+                prevBtn.style.visibility = 'hidden';
+            }
+        }
+    </script>
 </body>
-
-
 
 </html>
