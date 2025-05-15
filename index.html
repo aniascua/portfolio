@@ -1,421 +1,981 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Poppins:wght@400;500;600;700&family=Roboto+Mono:wght@300;500&display=swap');
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scaleable=no">
+/* Variables CSS */
+:root {
+    --primary-color: #5924ed;
+    --secondary-black: #0d081a;
+    --secondary-gray: #48464b;
+    --body-bg: #efebfa;
+    --link-hover: rgb(0, 200, 255);
+    --scroll-thumb: #b9b9b9;
+    --scroll-thumb-hover: rgb(122, 122, 122);
+    --timeline-line: #007bff;
+    --footer-bg: #1d1d1d;
+    --footer-text: #ffffff;
+    --footer-link-hover: rgb(0, 157, 255);
+    --copyright-text: rgb(107, 107, 107);
+}
 
-    <title>Ana Ascua Portfolio</title>
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    scroll-behavior: smooth;
+}
 
-    <link rel="stylesheet" href="style.css">
+html {
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px;
+    scroll-behavior: smooth;
+}
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-    <style>
-        .icon {
-            transition: transform 0.3s ease-in-out;
+body {
+    background-color: var(--body-bg);
+}
 
-        }
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
-        .icon:hover {
-            transform: scale(1.4);
+a {
+    color: var(--secondary-black);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
 
-        }
+a:hover {
+    color: var(--link-hover);
+}
 
-        .wrapper {
-            display: flex;
-            gap: 20px;
-            Espacio entre la card y el texto align-items: center;
-        }
+section {
+    padding-top: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-        .left {
-            flex: 0 0 auto;
-            width: auto;
-        }
+.container {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
 
-        .right {
-            flex: 1 1 auto;
-        }
+p {
+    font-size: 1.6rem;
+    color: var(--secondary-black);
+    line-height: 1.6;
+}
 
-        /* Media query para pantallas más pequeñas (mobile) */
-        @media (max-width: 768px) {
-            .wrapper {
-                flex-direction: column;
-                align-items: flex-start;
-            }
+.section-heading {
+    font-size: clamp(2rem, 10vw, 8rem);
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.2rem;
+    text-align: center;
+    position: relative;
+    margin-bottom: 6rem;
+}
 
-            .left {
-                width: 100%;
-                margin-bottom: 20px;
-            }
-        }
-    </style>
-</head>
+.section-heading::before {
+    content: attr(data-outline);
+    position: absolute;
+    left: 50%;
+    top: -15%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.2rem;
+    color: transparent;
+    -webkit-text-stroke: 1.5px #5a24ed2f;
+    z-index: -1;
+}
 
-<body>
-    <div class="scroll-button">
-        <a href="#home" class="btn btn-primary btn-xs">
-            <i class="fas fa-arrow-up"></i>
-        </a>
-    </div>
+.buttons {
+    margin-top: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2rem;
+}
 
-    <nav>
-        <div class="navbar">
-            <div class="logo"><a href="#home">{ Any }</a></div>
-            <ul class="menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">Sobre mí</a></li>
-                <!-- <li><a href="#education">Educación</a></li> -->
-                <li><a href="#projects">Proyectos</a></li>
-                <!-- <a href="#footer">Contacto</a></li> -->
-                <div class="cancel-btn">
-                    <i class="fas fa-times"></i>
-                </div>
-            </ul>
-            <div class="media-icons">
-                <a href="https://github.com/aniascua"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/anaascua/"><i class=" fab fa-linkedin"></i></a>
-            </div>
-        </div>
-        <div class="menu-btn">
-            <i class="fas fa-bars"></i>
-        </div>
-    </nav>
+.primary-btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 1.8rem;
+    padding: 0.8em 1.8em;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
 
-    <section class="home" id="home">
-        <div class="home-content">
-            <div class="text">
-                <div class="text-one">👋 Hola! Soy</div>
-                <div class="text-two">ANA<br>ASCUA</div>
+.primary-btn:hover {
+    background-color: #4070f4;
+    color: white;
+}
 
-                <div class="text-four">Técnica Universitaria en Programación UTN</div>
-                <div class="text-three">Buenos Aires, Argentina
-                </div>
-            </div>
-            <div class="button">
-                <a href="https://drive.google.com/file/d/1KOdkuw39ZobgudIq79fCHVlq5rQdm1wc/view?usp=sharing"
-                    class="primary-btn outline white-on-load">
-                    Descargar CV
-                </a>
-            </div>
-        </div>
-    </section>
+.buttons .primary-btn.outline {
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
 
-    <section id="about">
-        <div class="container">
-            <h2 class="section-heading" data-outline="sobre mí"><b>Sobre mí</b></h2>
-            <div class="wrapper">
-                <div class="left">
-                    <div class="card">
-                        <div class="img">
-                            <img src="./Images/z4AkDfF7.png" alt="Profile Picture">
-                        </div>
-                        <p class="card-desc">
-                            Me gusta colaborar, trabajar en equipo y el aprendizaje constante
-                        </p>
-                        <h3 class="card-name">ANA ASCUA</h3>
-                    </div>
-                </div>
-                <div class="right">
-                    <p class="subheading">Hola! 👋 Soy ANA</p>
-                    <h2 class="slogan">Web Developer 💻</h2>
-                    <p class="right-text">
-                        <b style="font-size: 1em;">Técnica Universitaria en Programación UTN</b><br>
-                        <span style="font-size: 1em;">Estudiante de Tecnicatura Universitaria en Desarrollo Web
-                            UNER</span>
-                    </p>
-                    <div class="icon-container">
-                        <a href="https://www.python.org" target="_blank" rel="noreferrer">
-                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg"
-                                alt="python" class="icon python-text-icon" />
-                        </a>
-                        <a href="https://openai.com/blog/chatgpt" target="_blank" rel="noreferrer">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/480px-ChatGPT_logo.svg.png"
-                                alt="ChatGPT" class="icon" style="width: 32px; height: 32px;" />
-                        </a>
-                        <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer">
-                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg"
-                                alt="html5" class="icon" />
-                        </a>
-                        <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer">
-                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg"
-                                alt="css3" class="icon" />
-                        </a>
-                        <a href="https://www.javascript.com" target="_blank" rel="noreferrer">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/480px-Unofficial_JavaScript_logo_2.svg.png"
-                                alt="javascript" class="icon" />
-                        </a>
-                        <a href="https://git-scm.com" target="_blank" rel="noreferrer">
-                            <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="Git"
-                                class="icon" />
-                        </a>
-                        <a href="https://desktop.github.com" target="_blank" rel="noreferrer">
-                            <img src="https://static-00.iconduck.com/assets.00/github-desktop-icon-2046x2048-r5plljad.png"
-                                alt="GitHub Desktop" class="icon" />
-                        </a>
-                    </div>
-                    <div class="buttons">
-                        <a href="mailto:anaascua5@yahoo.com.ar" class="primary-btn">Contacto</a>
-                        <a href="https://www.linkedin.com/in/anaascua/" class="primary-btn outline">LinkedIn</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+.buttons .primary-btn.outline:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
 
-    <section id="education">
-        <div class="container">
-            <h2 class="section-heading" data-outline="Educación"><b>Educación</b></h2>
-            <div class="timeline-wrapper">
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <h3><strong>Curso Testing QA</strong></h3>
-                            <p>(Talento Tech, Buenos Aires Aprende)</p>
-                            <p class="small-text">2025 - EN CURSO</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <h3><strong>Tecnicatura Universitaria en Desarrollo Web</strong></h3>
-                            <p>UNER (Universidad Nacional de Entre Ríos, Argentina)</p>
-                            <p class="small-text">2024 - EN CURSO (2do año)</p>
-                        </div>
-                    </div>
+.buttons svg {
+    width: 2.5rem;
+    /* Ajusté el tamaño del SVG */
+    color: var(--primary-color);
+}
 
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <h3><a href="https://media.licdn.com/dms/image/v2/D4D2DAQEEQj7y0CoSgg/profile-treasury-image-shrink_800_800/profile-treasury-image-shrink_800_800/0/1709329095178?e=1747695600&v=beta&t=iFwvnRY48w8f2byslBJ49u8ajRooPzf-vmbOvvODnao"
-                                    target="_blank" rel="noopener noreferrer"><strong>Introducción a DevOps -
-                                        CITIA</strong> Certificado<span
-                                        style="font-size: 0.8em; margin-left: 0.3em;">🔗</span></a></h3>
-                            <p>Curso de capacitación tecnológica UNLPam</p>
-                            <p class="small-text">Inicio: Sept 2023</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <h3><strong>Curso de Big Data</strong></h3>
-                            <p>Codo a Codo 4.0</p>
-                            <p class="small-text">Mar 2023 - Jul 2023</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <h3><a href="https://media.licdn.com/dms/image/v2/D4D2DAQH-WwyuNbAunA/profile-treasury-image-shrink_800_800/profile-treasury-image-shrink_800_800/0/1709329374629?e=1747699200&v=beta&t=exU4PUNYnRJcsBjeus_gLFXdon1AD5svhGZWnpDOTXU"
-                                    target="_blank" rel="noopener noreferrer"><strong>UTN.BA + NEORIS</strong>
-                                    Certificado<span style="font-size: 0.8em; margin-left: 0.3em;">🔗</span></a></h3>
-                            <p>Beca NEORIS, Curso Desarrollador Java</p>
-                            <p class="small-text">Oct 2022 - Dic 2022</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <h3><strong>Tecnicatura Universitaria en Programación</strong></h3>
-                            <p>UTN Haedo - UTN San Rafael</p>
-                            <p class="small-text">Mar 2021 - Nov 2023</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+/* Custom Scroll Bar CSS */
+::-webkit-scrollbar {
+    width: 10px;
+}
 
-    <section id="projects">
-        <div class="container">
-            <h2 class="section-heading" data-outline="Proyectos"><b>Proyectos</b></h2>
-            <div class="all-items">
-                <div class="item">
-                    <div class="left">
-                        <div class="img-container">
-                            <img src="Images/github2.PNG" alt="GitHub Profile">
-                        </div>
-                    </div>
-                    <div class="right">
-                        <h2 class="project-title">Mi GitHub 💻</h2>
-                        <h3 class="project-sub-title">El lugar donde alojo todos mis proyectos</h3>
-                        <p class="project-desc">Te invito a visitar mi GitHub para ver los proyectos en los que
-                            estoy trabajando</p>
-                        <div class="buttons">
-                            <a href="https://github.com/aniascua" class="primary-btn outline external-link">
-                                <span>Ver</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="left">
-                        <div class="img-container">
-                            <img src="Images/moe.png" alt="Proyecto Integrador E-Commerce">
-                        </div>
-                    </div>
-                    <div class="right">
-                        <h2 class="project-title">Proyecto Integrador E-Commerce (UTN)</h2>
-                        <h3 class="project-sub-title">E-Commerce desarrollado con HTML, CSS, JavaScript y Bootstrap</h3>
-                        <p class="project-desc">Proyecto final de la Tecnicatura Universitaria en Programación UTN.<br>
-                            Implementación de un E-Commerce utilizando **HTML**, **CSS**, **JavaScript** para la
-                            funcionalidad y **Bootstrap 5** para el diseño responsive.<br>El backend incluye integración
-                            con **MercadoPago** (credenciales no incluidas por seguridad).</p>
-                        <div class="buttons">
-                            <a href="https://github.com/aniascua/Proyecto-Final-Llamarada-Moe"
-                                class="primary-btn outline external-link" class="primary-btn external-link">
-                                <span>Ver Código</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M13.828 10.172a4 4 0 00-5.656 5.656m5.656-5.656l-2.828 2.828m-2.828-2.828l2.828 2.828m-2 2.121a4 4 0 00-5.657 5.657m5.657-5.657l-2.829 2.829m-4.9-4.9l3.535 3.535m-0-6.364l3.535-3.535m-3.535 3.535l-3.535-3.535" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="left">
-                        <div class="img-container">
-                            <img src="Images/simpsons1.jpg" alt="Próximamente">
-                        </div>
-                    </div>
-                    <div class="right">
-                        <h2 class="project-title">🚧 Próximamente 🚧</h2>
-                        <h3 class="project-sub-title">🚀 Nuevo proyecto en desarrollo 🚀</h3>
-                        <p class="project-desc">¡Estoy trabajando en un nuevo proyecto emocionante que estará disponible
-                            pronto! ⏳ Mantente atento para más detalles. 👀</p>
-                        <div class="buttons">
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
 
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+::-webkit-scrollbar-thumb {
+    background: var(--scroll-thumb);
+    border-radius: 12px;
+    transition: background-color 0.3s ease;
+}
 
-    <footer id="footer">
-        <div class="footer">
-            <div class="social">
-                <a href="https://github.com/aniascua"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/anaascua/"><i class="fab fa-linkedin"></i></a>
-                <a href="mailto:anaascua5@yahoo.com.ar"><i class="fa fa-envelope"></i></a>
-            </div>
-            <ul>
-                <!-- <li><a href="#home">Home</a></li> -->
-                <!-- <li><a href="#about">Sobre Mí</a></li>
-                <li><a href="#projects">Proyectos</a></li> -->
-                <!-- <li><a href="#footer">Contacto</a></li> -->
-            </ul>
-            <p class="copyright">Ana Ascua © 2025</p>
-        </div>
-    </footer>
+::-webkit-scrollbar-thumb:hover {
+    background: var(--scroll-thumb-hover);
+}
 
-    <script>
-        const menuBtn = document.querySelector(".menu-btn");
-        const menu = document.querySelector(".menu");
-        const cancelBtn = document.querySelector(".cancel-btn");
-        const navbar = document.querySelector("nav");
-        const timelineWrapper = document.querySelector('.timeline-wrapper');
-        const timeline = document.querySelector('.timeline');
-        const prevBtn = document.querySelector('.prev-btn');
-        const nextBtn = document.querySelector('.next-btn');
+/* Navbar Styling */
+nav {
+    background-color: white;
+    width: 100%;
+    padding: 1rem 2rem;
+    height: auto;
+    min-height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+    transition: all 0.3s ease;
+    font-family: "Poppins", sans-serif;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
 
-        menuBtn.onclick = () => {
-            menu.classList.add("active");
-            menuBtn.classList.add("hide");
-            cancelBtn.classList.add("show");
-            document.body.classList.add("no-scroll");
-        }
+nav.sticky {
+    padding: 0.8rem 2rem;
+    min-height: 50px;
+    box-shadow: 0 2px 5px rgba(255, 140, 0, 0.721);
+}
 
-        cancelBtn.onclick = () => {
-            menu.classList.remove("active");
-            menuBtn.classList.remove("hide");
-            cancelBtn.classList.remove("show");
-            document.body.classList.remove("no-scroll");
-        }
+nav .navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-        window.onscroll = () => {
-            if (this.scrollY > 20) {
-                navbar.classList.add("sticky");
-            } else {
-                navbar.classList.remove("sticky");
-            }
-        }
+nav .navbar .logo a {
+    font-weight: 900;
+    font-size: 2.2rem;
+    color: var(--secondary-black);
+    transition: color 0.3s ease-in-out;
+}
 
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
+nav .navbar .logo a:hover {
+    color: orange;
+}
 
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+nav .navbar .menu {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
 
-                // Close the menu if it's open after clicking a link
-                if (menu.classList.contains('active')) {
-                    menu.classList.remove('active');
-                    menuBtn.classList.remove('hide');
-                    cancelBtn.classList.remove('show');
-                    document.body.classList.remove("no-scroll");
-                }
-            });
-        });
+nav .navbar .menu li {
+    list-style: none;
+    margin: 0 1.5rem;
+}
 
-        if (prevBtn && nextBtn && timeline) {
+.navbar .menu a {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #ffa2a2;
+    transition: color 0.3s ease;
+}
 
-            const buttonStyle = `
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                width: 50px; /* Aumenta el tamaño del círculo */
-                height: 50px; /* Aumenta el tamaño del círculo */
-                border-radius: 50%;
-                background-color: rgba(255, 140, 0, 0.7); /* Naranja con transparencia */
-                color: white;
-                font-size: 2.2rem; /* Aumenta el tamaño de la flecha */
-                font-weight: bold;
-                cursor: pointer;
-                border: none;
-                outline: none;
-                z-index: 10;
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-            `;
+.navbar .menu a:hover {
+    color: var(--link-hover);
+}
 
+nav .navbar .media-icons a {
+    color: var(--secondary-gray);
+    font-size: 2.5rem;
+    margin: 0 0.8rem;
+}
 
-            prevBtn.style.cssText = buttonStyle + 'left: 10px;';
-            nextBtn.style.cssText = buttonStyle + 'right: 10px;';
+nav .navbar .media-icons a:hover {
+    color: var(--link-hover);
+}
 
-            prevBtn.addEventListener('click', function () {
-                timeline.scrollLeft -= 300;
-            });
+/* Side Navigation Menu Button CSS */
+nav .menu-btn,
+.navbar .menu .cancel-btn {
+    position: absolute;
+    color: var(--secondary-black);
+    right: 3rem;
+    top: 2rem;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    display: none;
+}
 
-            nextBtn.addEventListener('click', function () {
-                timeline.scrollLeft += 300;
-            });
+nav .menu-btn:hover,
+.navbar .menu .cancel-btn:hover {
+    color: var(--link-hover);
+}
 
+/* Home Section Styling */
+.home {
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(135deg, #FF6B6B, #FFAA00, #ADD8E6);
+    /* Inspirado en GTA VI */
+    background-size: 200% 200%;
+    /* animation: animate-gradient 10s linear infinite;  Puedes mantener o quitar la animación */
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-            timeline.addEventListener('scroll', function () {
-                if (timeline.scrollLeft === 0) {
-                    prevBtn.style.visibility = 'hidden';
-                } else {
-                    prevBtn.style.visibility = 'visible';
-                }
+@keyframes animate-gradient {
+    0% {
+        background-position: 0% 50%;
+    }
 
-                if (timeline.scrollLeft + timeline.offsetWidth >= timeline.scrollWidth - 5) {
-                    nextBtn.style.visibility = 'hidden';
-                } else {
-                    nextBtn.style.visibility = 'visible';
-                }
-            });
+    50% {
+        background-position: 100% 50%;
+    }
 
+    100% {
+        background-position: 0% 50%;
+    }
+}
 
-            if (timeline.scrollLeft === 0) {
-                prevBtn.style.visibility = 'hidden';
-            }
-        }
-    </script>
-</body>
+.home .home-content {
+    text-align: center;
+    color: var(--secondary-black);
+}
 
-</html>
+.home .text-one {
+    font-size: 2.3rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.home .text-two {
+    font-size: clamp(4rem, 15vw, 7rem);
+    font-weight: 900;
+    color: white;
+    line-height: 1;
+    margin-bottom: 1rem;
+}
+
+.home .text-four {
+    font-size: 2.3rem;
+    font-weight: 500;
+    color: rgb(0, 0, 0);
+
+    margin-bottom: 1rem;
+}
+
+@keyframes animate-text {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+.home .text-three {
+    font-size: 2.2rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.home .button {
+    margin-top: 2rem;
+}
+
+.home .button a.primary-btn.outline {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.home .button a.primary-btn.outline:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 9px;
+    }
+
+    .home {
+        height: 100vh;
+        padding: 10rem 0;
+    }
+
+    .home .text-two {
+        font-size: clamp(4rem, 12vw, 6rem);
+    }
+}
+
+/* About Section */
+#about {
+    padding: 8rem 0;
+    /* Ajusté el padding */
+}
+
+#about .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+}
+
+#about .left {
+    padding: 2rem;
+    text-align: center;
+    flex: 1;
+}
+
+#about .left .card {
+    box-shadow: 0px 0px 20px #4705fc33;
+    padding: 3rem;
+    border-radius: 1.2rem;
+    min-height: 40rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#about .left .card .img {
+    width: 12.2rem;
+    height: 12.2rem;
+    margin-bottom: 2rem;
+    border-radius: 50%;
+    overflow: hidden;
+    outline: 4px solid white;
+}
+
+#about .left .card .card-desc {
+    margin-bottom: 8px;
+}
+
+#about .left .card .card-name {
+    font-weight: bold;
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 0;
+}
+
+#about .left .card .card-sub-title {
+    font-size: 1.4rem;
+    color: var(--secondary-gray);
+}
+
+#about .right {
+    flex: 1;
+}
+
+#about .right .subheading {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+#about .right .slogan {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+
+#about .right .right-text {
+    color: var(--secondary-gray);
+    text-align: justify;
+    font-size: 1.6rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+#about .icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+#about .icon-container a {
+    display: inline-block;
+}
+
+#about .icon-container img {
+    width: 4rem;
+    height: 4rem;
+}
+
+/* Education Section - Diseño Horizontal y Naranja Playa (Escritorio) con Botones */
+#education {
+    padding: 6rem 0;
+    background-color: #f9f0e1;
+}
+
+#education .section-heading {
+    color: #ff8c00;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+#education .timeline-wrapper {
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+#education .timeline {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 2rem 0;
+}
+
+#education .timeline::after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    background-color: #ffb347;
+    top: 50%;
+    left: 50px;
+    right: 50px;
+    z-index: 1;
+}
+
+#education .timeline-item {
+    flex: 0 0 auto;
+    width: 280px;
+    margin-right: 3rem;
+    text-align: center;
+    position: relative;
+}
+
+#education .timeline-content {
+    position: relative;
+    background-color: #fff3e0;
+    padding: 1.5rem;
+    border-radius: 0.6rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    margin-top: 2rem;
+}
+
+/* #education .timeline-content::after {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 1rem;
+    border-style: solid;
+    border-color: transparent transparent #fff3e0 transparent;
+} */
+
+#education .timeline-item h3 {
+    margin-top: 0;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #d9534f;
+    margin-bottom: 0.5rem;
+}
+
+#education .timeline-item p {
+    font-size: 1.4rem;
+    color: #777;
+    margin-bottom: 0.3rem;
+}
+
+#education .timeline-content .small-text {
+    font-size: 1.2rem;
+    color: #ff8c00;
+}
+
+#education .timeline-item::before {
+    content: '';
+    position: absolute;
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+    background-color: #ffb347;
+    z-index: 3;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid #f9f0e1;
+}
+
+#education .timeline-item:first-child {
+    margin-left: 0;
+}
+
+#education .timeline-item:last-child {
+    margin-right: 0;
+}
+
+/* Ocultar botones en móviles */
+@media (max-width: 768px) {
+    .timeline-wrapper {
+        padding: 0;
+    }
+
+    .timeline-btn {
+        display: none;
+    }
+
+    #education .timeline {
+        display: block;
+        overflow-x: auto;
+        padding: 1rem 0;
+    }
+
+    #education .timeline::after {
+        width: 2px;
+        height: 100%;
+        top: 0;
+        left: 20px;
+        right: auto;
+    }
+
+    #education .timeline-item {
+        width: 100%;
+        margin-right: 0;
+        margin-left: 0;
+        margin-bottom: 2rem;
+        text-align: left;
+        padding-left: 40px;
+    }
+
+    #education .timeline-item::before {
+        top: 10px;
+        left: 14px;
+    }
+
+    #education .timeline-content {
+        margin-top: 0;
+        padding: 1rem;
+        border-left: 3px solid #ffb347;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    #education .timeline-content::after {
+        display: none;
+    }
+}
+
+#education .timeline-item::before {
+    display: none;
+}
+
+.timeline-btn {
+    display: none;
+}
+
+/* Media query para diseño vertical en pantallas más pequeñas */
+@media (max-width: 768px) {
+
+    .timeline-btn {
+        display: none !important;
+    }
+}
+
+/* Projects Section */
+#projects {
+    padding: 8rem 0;
+}
+
+#projects .all-items {
+    margin-top: 4rem;
+}
+
+#projects .item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-bottom: 10rem;
+}
+
+#projects .item:nth-of-type(even) {
+    flex-direction: row-reverse;
+}
+
+#projects .item:nth-child(3) .left .img-container {
+    margin-right: auto;
+    max-width: 80%;
+}
+
+#projects .item .left {
+    flex: 1;
+}
+
+#projects .item .right {
+    flex: 1;
+    margin-left: -15rem;
+    background-color: var(--body-bg);
+    padding: 4rem 3rem;
+    border-radius: 1.2rem;
+    box-shadow: 0px 0px 20px #00000028;
+    z-index: 2;
+}
+
+#projects .item:nth-of-type(even) .right {
+    margin-left: 0;
+}
+
+#projects .item:nth-of-type(even) .left {
+    margin-left: -15rem;
+}
+
+#projects .item .left .img-container {
+    height: 40rem;
+    overflow: hidden;
+    border-radius: 1.2rem;
+    box-shadow: 0px 0px 20px #4705fc33;
+    position: relative;
+}
+
+#projects .item .left .img-container::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #5a24ed38;
+}
+
+#projects .item .left .img-container img {
+    transition: transform 0.3s ease;
+}
+
+#projects .item:hover .left .img-container img {
+    transform: scale(1.05);
+}
+
+#projects .item .right .project-title {
+    font-size: 2.5rem;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 1rem;
+    color: var(--secondary-black);
+}
+
+#projects .item .right .project-sub-title {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+    color: var(--secondary-gray);
+}
+
+#projects .item .right .project-desc {
+    color: var(--secondary-gray);
+    margin-bottom: 3rem;
+    font-size: 1.6rem;
+    line-height: 1.7;
+}
+
+#projects .item .right .buttons {
+    margin-top: 2rem;
+    justify-content: flex-start;
+}
+
+#projects .item .right .buttons a {
+    padding: 0.8em 1.8em;
+}
+
+/* Footer Section */
+#footer {
+    padding: 1rem 0;
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer .social {
+    padding-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer .social a {
+    font-size: 2rem;
+    color: inherit;
+    width: 3rem;
+    height: 3rem;
+    line-height: 3rem;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 0.5rem;
+    opacity: 0.75;
+    transition: opacity 0.3s ease, color 0.3s ease;
+}
+
+.footer .social a:hover {
+    opacity: 1;
+    color: var(--footer-link-hover);
+}
+
+.footer ul {
+    margin-top: 0.5rem;
+    padding: 0;
+    list-style: none;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer ul li {
+    display: inline-block;
+    padding: 0 0.8rem;
+}
+
+.footer ul li a {
+    color: inherit;
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+.footer ul li a:hover {
+    opacity: 1;
+}
+
+.footer .copyright {
+    font-size: 1.2rem;
+    color: var(--copyright-text);
+    margin-top: 0.5rem;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1024px) {
+    #projects .item {
+        margin-bottom: 8rem;
+    }
+
+    #projects .item .right {
+        padding: 3rem;
+        margin-left: -10rem;
+    }
+
+    #projects .item:nth-of-type(even) .left {
+        margin-left: -10rem;
+    }
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 9px;
+    }
+
+    .home {
+        height: 100vh;
+        padding: 10rem 0;
+    }
+
+    .home .text-two {
+        font-size: clamp(4rem, 12vw, 6rem);
+    }
+
+    nav {
+        padding: 1.6rem 2rem;
+    }
+
+    nav.sticky {
+        padding: 1.3rem 2rem;
+    }
+
+    nav .navbar .menu {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        background: white;
+        height: 100vh;
+        max-width: 300px;
+        width: 100%;
+        padding-top: 8rem;
+        flex-direction: column;
+        align-items: center;
+        transition: left 0.5s ease;
+    }
+
+    nav .navbar .menu.active {
+        left: 0;
+    }
+
+    nav .navbar .menu li {
+        margin: 1rem 0;
+    }
+
+    .navbar .menu a {
+        font-size: 2rem;
+        color: var(--secondary-black);
+    }
+
+    nav .navbar .media-icons {
+        display: none;
+    }
+
+    nav .menu-btn,
+    .navbar .menu .cancel-btn {
+        display: block;
+    }
+
+    #about .wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #about .right {
+        text-align: left;
+    }
+
+    #about .left {
+        padding: 1rem;
+    }
+
+    #about .left .card {
+        min-height: auto;
+    }
+
+    #about .icon-container {
+        justify-content: center;
+    }
+
+    #education .timeline::after {
+        left: 2rem;
+    }
+
+    #education .timeline-item {
+        width: 100%;
+        padding-left: 5rem;
+        padding-right: 0;
+        text-align: left;
+        margin-bottom: 3rem;
+    }
+
+    #education .timeline-item:nth-child(odd),
+    #education .timeline-item:nth-child(even) {
+        padding-left: 5rem;
+    }
+
+    #education .timeline-item:nth-child(odd)::before,
+    #education .timeline-item:nth-child(even)::before {
+        left: 1.4rem;
+        top: 20px;
+    }
+
+    #education .timeline-item:nth-child(odd) .timeline-content::after,
+    #education .timeline-item:nth-child(even) .timeline-content::after {
+        left: -1rem;
+        top: 2rem;
+        border-width: 1rem 1rem 1rem 0;
+        border-color: transparent white transparent transparent;
+    }
+
+    #projects .item {
+        flex-direction: column;
+        margin-bottom: 8rem;
+    }
+
+    #projects .item .left,
+    #projects .item .right {
+        flex: 1;
+        width: 90%;
+        margin-left: 0;
+    }
+
+    #projects .item .right {
+        margin-top: -10rem;
+        padding: 3rem;
+    }
+
+    #projects .item .left .img-container {
+        height: 30rem;
+    }
+
+    .buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .buttons a {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .footer ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer ul li {
+        display: block;
+        padding: 0.5rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 8px;
+    }
+
+    .home .text-two {
+        font-size: clamp(3rem, 12vw, 5rem);
+    }
+}
